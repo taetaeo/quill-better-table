@@ -124,8 +124,12 @@ class BetterTable extends Module {
     // expected my binding callback excute first
     // I changed the order of binding callbacks
 
-    let thisBinding = quill.keyboard.bindings["Backspace"];
-    if (Array.isArray(backspaceBindings) && backspaceBindings.length > 0) thisBinding?.pop();
+    let backspaceBindings = quill.keyboard.bindings["Backspace"];
+    let thisBinding;
+    if (Array.isArray(backspaceBindings) && backspaceBindings.length > 0) {
+      thisBinding = backspaceBindings.pop();
+    }
+
     // let thisBinding = quill.keyboard.bindings['Backspace'].pop()
     quill.keyboard.bindings["Backspace"].splice(0, 1, thisBinding);
 
