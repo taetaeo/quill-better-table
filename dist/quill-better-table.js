@@ -3184,10 +3184,11 @@
             let thisBinding;
             if (Array.isArray(backspaceBindings) && backspaceBindings.length > 0) {
               thisBinding = backspaceBindings.pop();
+              backspaceBindings.splice(0, 1, thisBinding);
             }
 
             // let thisBinding = quill.keyboard.bindings['Backspace'].pop();
-            quill.keyboard.bindings["Backspace"].splice(0, 1, thisBinding); // add Matchers to match and render quill-better-table for initialization
+            // quill.keyboard.bindings["Backspace"].splice(0, 1, thisBinding); // add Matchers to match and render quill-better-table for initialization
             // or pasting
 
             quill.clipboard.addMatcher("td", matchTableCell);
