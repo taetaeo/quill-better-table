@@ -3186,6 +3186,7 @@
               thisBinding = backspaceBindings.pop();
               backspaceBindings.splice(0, 1, thisBinding);
             }
+            console.log(backspaceBindings, thisBinding);
 
             // let thisBinding = quill.keyboard.bindings['Backspace'].pop();
             // quill.keyboard.bindings["Backspace"].splice(0, 1, thisBinding); // add Matchers to match and render quill-better-table for initialization
